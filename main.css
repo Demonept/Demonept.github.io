@@ -1,0 +1,670 @@
+@keyframes loading {
+    0%{
+        transform: translateY(0px)
+    }
+    50%{transform:translateY(-20px)}
+    100%{transform: translateY(0px)}
+}
+
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background-color: gray;
+
+    font-family: 'Oswald', sans-serif;
+}
+.container{
+    max-width: 1200px;
+    margin:auto;
+    margin-top: 20px;
+}
+header{
+    margin-top: 35px;
+}
+#header{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+   
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07)
+    ;
+
+    border-radius: 10px 10px 20px 20px;
+}
+#logo{
+    padding-left: 30px;
+    height: 50px;
+}
+
+
+@media only screen and (max-width: 800px) {
+    #logo{
+        display: none;
+    }
+    #header{
+        justify-content: center;
+    }
+}
+
+/*==============Навигация============*/
+.navigation{
+    width: 330px;
+    height: 70px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.navigation ul{
+    width: 350px;
+    display: flex;
+}
+
+.navigation ul li{
+    position: relative;
+    list-style: none;
+
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+.navigation ul li a{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.5s;
+    color:rgb(126, 14, 14);
+}
+
+.navigation ul li.active a .icon{
+    transform: translateY(-35px);
+
+}
+.navigation ul li a .name{
+    position: absolute;
+    color: black;
+    font-weight: 400;
+    font-size: 0.75em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.navigation ul li.active a .name{
+    opacity: 1;
+    transform: translateY(10px);
+
+}
+
+.indicator{
+    position: absolute;
+    top: -50%;
+    width: 60px;
+    height: 60px;
+    
+    background: violet;
+    border-radius: 50%;
+    border: 6px solid gray;
+    transition: 0.5s;
+}
+.indicator::before{
+    content: '';
+    position: absolute;
+    top: 47%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 1px -10px 0 0 gray;
+
+}
+.indicator::after{
+    content: '';
+    position: absolute;
+    top: 47%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-left-radius: 20px;
+    box-shadow: -1px -10px 0 0 gray;
+
+}
+.navigation ul li:nth-child(1).active ~ .indicator
+{
+    transform: translateX(calc(70px *0));
+}
+.navigation ul li:nth-child(2).active ~ .indicator
+{
+    transform: translateX(calc(70px *1));
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator
+{
+    transform: translateX(calc(70px *2));
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator
+{
+    transform: translateX(calc(70px *3));
+}
+
+/* .navigation ul li:nth-child(5).active ~ .indicator
+{
+    transform: translateX(calc(70px *4));
+}
+ */
+ @media only screen and (max-width: 400px){
+    .navigation ul{
+        width: auto;
+        padding-left: 0;
+    }
+}
+
+/*==============Навигация закончена========*/
+.menu{
+    padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    
+}
+
+
+#firstBlock{
+    display: grid;
+    grid-template-columns: 40% 60%;
+
+}
+
+.firstBlockLeft{
+    grid-column: 1;
+    text-align: center;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.preview{
+    grid-column: 1;
+    text-align: center;
+    background-color: white;
+    padding-bottom: 30px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07)
+    ;
+    border-radius: 5px;
+
+}
+.preview p{
+    text-align: left;
+    margin: 20px 10px 20px 10px;
+}
+.photo{
+    overflow: hidden;
+    margin: auto;
+}
+#myphoto{
+    position: relative;
+    grid-column: 1;
+    height:500px;
+    overflow: hidden;
+    padding-right: 10px;
+    border-radius: 30px;
+    /* clip-path: polygon(100% 0, 0 0, 52% 100%); */
+}
+.text{
+    grid-column:2;
+    font-weight: 300;
+    margin-left: 15px;
+}
+
+.text2{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+
+.myphoto2{
+    overflow: hidden;
+    grid-column:2;
+    grid-row:2;
+    margin: auto;
+}
+#myphoto2{
+    overflow: hidden;
+    width: 100%;
+}
+
+.secondBlock_title{
+    text-align: center;
+}
+.brands{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.brand{
+    width: 23%;
+    margin-top: 20px;
+}
+#resume{
+    grid-column:2;
+    width: 90%;
+    margin: auto;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 510px 600px 410px;
+    padding:10px;
+    background-color: white;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07)
+    ;
+    
+    border-radius: 5px;
+    
+    display: grid;
+}
+
+.secondProject{
+    grid-column: 1;
+    grid-row: 3;
+    overflow: hidden;
+    width: 100%;
+}
+#snoop{
+    width: 100%;
+    border-radius: 30px;
+}
+@media only screen and (max-width: 1000px) {
+    .myphoto2{
+        margin: 0;
+    }
+    #firstBlock{
+        grid-template-columns: 100%;
+    }
+    .preview{
+        margin-bottom: 20px;
+    }
+}
+@media only screen and (max-width: 700px) {
+    #resume{
+        grid-template-columns: 100%;
+        grid-template-rows: auto;
+    }
+    .photo{
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .text{
+        grid-column: 1;
+    }
+    .text2{
+        grid-row: 3;
+        font-size: 20px;
+    }
+    .myphoto2{
+        margin-top: 15px;
+        grid-column: 1;
+        grid-row: 4;
+    }
+    .secondProject{
+        margin-top: 15px;
+        grid-row: 5;
+    }
+}
+
+
+/*=============Район калькулятора============*/
+#calc{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: none;
+    background-color: white;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+
+    padding-left: 40px;
+    padding-bottom: 50px;
+    text-align: left;
+    
+}
+/* #calc form{
+    display: flex;
+    flex-wrap: wrap;
+}
+#calc p{
+    width: 25%;
+}
+ */
+/* #banks{
+    
+} */
+
+#calc input, select{
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+@media only screen and (max-width: 400px){
+    #calc{
+        margin: 0 20px;
+        padding: 10px 20px;
+    }
+}
+
+/*=============Конец калькулятора============*/
+
+
+/*=============Начало игры============*/
+.game{
+    display: none;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-template-columns: 50% 50%;
+}
+
+.firstGame{
+    grid-column: 1;
+    background-color: rgb(0, 0, 0);
+    width: 70%;
+    height: 600px;
+    margin: auto;
+
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.gameMenu{
+    position: relative;
+    top: 50%;
+    left: 40%;
+    justify-content: center;
+    
+}
+
+.stars{
+    border-right: 1px solid rgba(255, 255, 255, 0.514);
+    height: 15px;
+    width: 30px;
+    animation: stars 2s infinite linear;
+    z-index: 3;
+}
+#hero{
+    display: none;
+    z-index: 1;
+    position: relative;
+    top: 75%;
+    height: 90px;
+    left: 200px;
+}
+.ourShip{
+    position: relative;
+    top: 75%;
+}
+.rocket{
+    animation: pew 1s linear;
+    position: relative;
+    top: -50px;
+    width: 3px;
+}
+
+.mine{
+    animation: stars 3s linear;
+    position: relative;
+    z-index: 15;
+    top: -200px;
+
+}
+
+@keyframes pew{
+    0%{transform: translateY(-5px)}
+    100%{transform: translateY(-600px)}
+}
+
+@keyframes stars{
+    0%{transform: translateY(-100px);}
+    100%{transform: translateY(650px);}
+}
+@keyframes run{
+    0%{transform: translateY(100px)}
+    100%{transform: translateY(20px)}
+}
+@keyframes rotate{
+    0%{transform: rotate(10deg)}
+    10%{transform: rotate(10deg)}
+    20%{transform: rotate(10deg)}
+    30%{transform: rotate(10deg)}
+    40%{transform: rotate(10deg)}
+    50%{transform: rotate(10deg)}
+    60%{transform: rotate(10deg)}
+    70%{transform: rotate(10deg)}
+    80%{transform: rotate(10deg)}
+    90%{transform: rotate(10deg)}
+    100%{transform: rotate(10deg)}
+}
+
+#startFirstGame{
+    justify-content: center;
+    margin: auto;
+}
+
+.secondGame{
+    grid-column: 2;
+    background-color: white;
+    width: 70%;
+    height: auto;
+    margin: auto;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+
+}
+.title{
+    text-align: center;
+}
+#gameText{
+    margin: 20px 20px;
+}
+
+@media only screen and (max-width: 800px) {
+    .game{
+        grid-template-columns: 100%;
+        grid-column-start: 1;
+        grid-column-end: 1;
+    }
+    .firstGame{
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .secondGame{
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: 30px;
+
+    }
+}
+
+/*=============Конец игры============*/
+
+
+/*=============Начало блога============*/
+.search{
+    background-color: white;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+}
+
+
+.posts{
+    display: none;
+    flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    
+}
+.newPost{
+    display: none;
+    background-color: white;
+    width: 23%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    min-height: 150px;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+}
+.activated{
+    display: block !important;
+    animation: showMes 0.4s linear;
+}
+@keyframes showMes {
+    0%{opacity: 0}
+    100%{opacity: 100}
+}
+
+.postId{
+    margin-bottom: 10px;
+}
+
+.postTitle{
+    font-weight: bold;
+    min-height: 50px;
+}
+
+
+.postBody{
+    display:none;
+}
+
+
+.showMore{
+    position: relative;
+    margin-top: 45px;
+    
+}
+.showPost{
+    background-color: white;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    min-height: 50px;
+    text-align: center;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow:
+    1.4px 2.8px 1.7px rgba(0, 0, 0, 0.02),
+    3.3px 6.7px 4.1px rgba(0, 0, 0, 0.028),
+    6.3px 12.5px 7.8px rgba(0, 0, 0, 0.035),
+    11.2px 22.3px 13.8px rgba(0, 0, 0, 0.042),
+    20.9px 41.8px 25.9px rgba(0, 0, 0, 0.05),
+    50px 100px 62px rgba(0, 0, 0, 0.07);
+    border-radius: 5px;
+
+}
+
+@media only screen and (max-width: 700px){
+    .newPost{
+        width: 38%;
+    }
+    .search{
+        text-align: center;
+    }
+}
+@media only screen and (max-width: 400px){
+    .newPost{
+        width: 70%;
+    }
+}
+/*=============Конец блога============*/
