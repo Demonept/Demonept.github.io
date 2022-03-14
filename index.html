@@ -1,7 +1,225 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful resume</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Petemoss&display=swap" rel="stylesheet">
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <header>
+        <div class="container" id="header">
+            <div class="logo">
+                <img src="img/logo.png" alt="Savchenko Dmitriy" id="logo">
+            </div>
+            <div class="navigation">
+                <ul>
+                    <li class="list active">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="accessibility-outline"></ion-icon>
+                            </span>
+                            <span class="name">Главная</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="calculator-outline"></ion-icon>
+                            </span>
+                            <span class="name">Калькулятор</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="game-controller-outline"></ion-icon>
+                            </span>
+                            <span class="name">Игра</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="people-circle-outline"></ion-icon>
+                            </span>
+                            <span class="name">Блог</span>
+                        </a>
+                    </li>
+                    <!-- <li class="list">
+                        <a href="#">
+                            <span class="icon">
+                                <ion-icon name="lock-open-outline"></ion-icon>
+                            </span>
+                            <span class="name">Вход</span>
+                        </a>
+                    </li> -->
+                    <div class="indicator">
+                        
+                    </div>
+                </ul>   
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="firstBlock">
+        <div class="posts">
+            <div class="search">
+                <h2>Поиск поста по номеру</h2>
+                <input type="number" value="" id="searching">
+                <input type="submit" id="letsDoSomeShit">
+            </div>
+        </div>
+        <div class="game">
+            <div class="firstGame">
+                <div class="gameMenu">
+                    <input type="button" id="startFirstGame" value="Начать игру">
+                </div>
+                <div class="ourShip">
+                    <img src="img/png/ship.png" id="hero" alt="Не вышло">
+                </div>
+            </div>
+            <div class="secondGame">
+                <div class="title"><h3>Великолепная игра, в которой невозможно проиграть</h3></div>
+                <div class="text" id="gameText">Управление самолетом происходит за счет левой и правой стрелок,
+                     а на пробел можно даже пострелять!
+                    За надвигающиеся метеориты(огненые печеньки) можете не переживать. Они всё равно ничего Вам не сделают.</div>
+            </div>
+        </div>
+        <div class="calc" id="calc">
+            <h2 class="title">Калькулятор для ориентировочного подсчета средств на ремонт квартиры</h2>
+            <form name="calculator" action="#" method="get">
+                <p>Общая площадь квартиры(m2):
+                <input type="text" id="general" size="3" value="" required autocomplete="off">
+                </p>
+                <p>Площадь кухни:
+                    <input type="text" id="kitchen" size="2" value="" required autocomplete="off">
+                </p>
+                <p>Площадь санузла:
+                    <input type="text" id="toilet" size="2" value="" required autocomplete="off">
+                </p>
+                <p>Ремонт потолков?
+                   <select id="ceiling" size="1">
+                       <option value="1">Да</option>
+                       <option value="0">Нет</option>
+                   </select>
+                </p>
+                <p>Замена дверей?
+                    <select id="doors" size="1">
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option>
+                    </select>
+                 </p>
+
+                 <p>Теплые полы?
+                    <select id="floor" size="1">
+                        <option value="1">Да</option>
+                        <option value="0">Нет</option>
+                    </select>
+                 </p>
+ 
+                <p>Какого рода ремонт Вам нужен?
+                    <select id="budget" size="1">
+                        <option value="4">Дорого-богато</option>
+                        <option value="0">Чтобы продать эту пещеру</option>
+                    </select>
+                </p>
+                <p>
+                    Сколько кредитов Вы готовы взять, чтобы расплатиться с нами?*
+                    <input id="banks" type="range" min="1" max="10" step="1" value="1">
+                    <p>*Минимум 1, максимум 10</p>
+                </p>
+                <input type="submit" id='submit'>
+            </form>
+            <p>Приблизительная стоимость равна = </p>
+            <div class="price" id="price">
+                
+            </div>
+        </div>
+        <div class="firstBlockLeft">
+            <div class="preview">
+                <h2>Данный сайт создается исключительно для представления моих навыков и знаний</h2>
+                <p>Все строчки написаны мной, копирование (чужих) кусков кода запрещено*. <br> 
+                    Написание происходит на HTML5, CSS3, JS</p>
+                    <p>
+                        На этой странице Вы можете найти краткую информацию обо мне, о моих знаниях на данный момент и, конечно же, о Снуппи!
+                    </p>
+                    <p>
+                        Перейдя на вкладку с калькулятором можно увидеть простой калькулятор для подсчета ориентировочной стоимости ремонта.
+                    </p>
+                    <p>Внутри вкладки с игрой распологается простенькая игра, в которой автоматически генерируются звезды и метеориты.</p>
+                    <p>И в последней вкладке реализована работа с внешними данными. Их сортировкой, поиском и визуализацией.</p>
+            </div>        
+        </div>
+    
+        <div class="firstBlockRight">
+            <div id="resume">
+                <div class="photo">            
+                    <img src="img/myphoto2.jpeg" id="myphoto" alt="My Photo">
+                </div>
+                <div class="text">
+                    <h2>Меня зовут Дмитрий, я начинающий фронт-енд разработчик!</h2>
+                    <p>Обучение происходит по книгам, статьям, видео-урокам.<br>
+                    На данный момент я изучил HTML5, CSS3, JavaScript. Есть небольшой опыт работы с SCSS, PHP и Python.</p>
+                    <p>В данный момент я занимаюсь изучением TS, после него будет либо React, либо Vue</p>
+                    <p>Развиваться хочу в направлении front-end разработчика</p>
+                </div>
+                <div class="text2">Один из сделанных мной проектов. Реализован с помощью CSS3, Jquery, PHP.</div>
+                <div class="myphoto2"><img src="img/last_project.png" id="myphoto2" alt="trus me"></div>
+                <div class="secondProject">
+                    <img src="img/myphoto.JPG" alt="Снуппи" id="snoop" >
+                </div>
+                <div class="text" id="text3">
+                    <p>А это Снуппи:)</p>
+                    <h3>Связаться со мной можно:</h3>
+                    <p>Мэйл: svk.dmitriy@gmail.com</p>
+                    <p>headhunter: <a href="https://spb.hh.ru/resume/dcac6d05ff08dea65e0039ed1f4a335a71596d">Моё резюме</a></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="secondBlock">
+        <div class="container">
+            <div class="secondBlock_title">
+                <h2>Компании, которые присылали мне предложения о работе*</h2>
+            </div>
+            <div class="brands" id="brands">
+                <img src="img/png/2 (1).png" alt="" class="brand">
+                <img src="img/png/2 (2).png" alt="" class="brand">
+                <img src="img/png/2 (3).png" alt="" class="brand">
+                <img src="img/png/2 (4).png" alt="" class="brand">
+                <img src="img/png/2 (5).png" alt="" class="brand">
+                <img src="img/png/2 (6).png" alt="" class="brand">
+                <img src="img/png/2 (7).png" alt="" class="brand">
+                <img src="img/png/2 (8).png" alt="" class="brand"> 
+            </div>
+        </div>
+    </div>
+    <div class="fail"><h4>*Это не правда</h4></div>
+    
+    <!---конец заменяемой части----->
+
+    <!--Начало скриптов-->
+    <script src="main.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script>
+    const listi = document.querySelectorAll('.list')
+
+    function activeLink(){
+        listi.forEach((item)=>
+        item.classList.remove('active'));
+        this.classList.add('active')
+    }
+
+    listi.forEach((item)=>
+    item.addEventListener('click',activeLink))
+    </script>  
+
 </body>
 </html>
